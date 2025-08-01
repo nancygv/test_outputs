@@ -19,6 +19,8 @@ jobs:
 
   t2_outputs:
     runs-on: ubuntu-latest
+    outputs:
+      var2: ${{ steps.var2.outputs.output2 }}
     steps:
       - name: definir outputs v2
         id: var2
