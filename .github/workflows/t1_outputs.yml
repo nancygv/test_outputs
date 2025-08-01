@@ -19,19 +19,15 @@ jobs:
 
   t2_outputs:
     runs-on: ubuntu-latest
-    needs: t1_outputs
     steps:
-      - name: imprimir outputs v2
-        run: |
-          echo "Output 1 from t1:  ${{ env.output2 }}"
-
       - name: definir outputs v2
         id: var2
         run: |
           echo "output2=Hola Mundo" >> $GITHUB_ENV
-
+   
   t3_outputs:
     runs-on: ubuntu-latest
+    needs: t2_outputs
     steps:
       - name: leer outputs v2
         run: |
